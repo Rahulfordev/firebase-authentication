@@ -5,6 +5,12 @@ body {
   font-family: sans-serif;
 }
 
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
 .header__container {
   max-width: 1200px;
   margin-inline: auto;
@@ -94,12 +100,10 @@ header {
 
 .nav-users {
   display: flex;
-  /* background-color: red; */
   align-items: center;
   margin-inline: auto;
   gap: 5px;
-  /* padding: 2; */
-  padding-left: 8px;
+  padding: 2px 8px;
   border-radius: 5px;
   height: 50px;
   transition: all 0.5s ease-in-out;
@@ -116,4 +120,44 @@ header {
 
 .user__name {
   color: #fff;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header__logo-name {
+  color: #fff;
+}
+
+.nav__links a {
+  color: #fff;
+}
+
+.nav-link__details-users {
+  position: absolute;
+  width: 180px;
+  height: 316px;
+  right: 75px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+.nav-link__details-user {
+  color: rgb(250, 250, 250);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* justify-content: space-between; */
+}
+
+.nav-link__details-user svg {
+  width: 16px;
+}
+
+.manage-account {
+  margin-top: 1rem;
 }

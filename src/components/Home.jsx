@@ -1,6 +1,10 @@
 import { auth } from "../firebase/firebase.config";
+import { AuthContext } from "../context/AuthProvider";
+import { useContext } from "react";
 const Home = () => {
   let userName = auth?.currentUser?.displayName;
+  const { user } = useContext(AuthContext);
+  console.log("user All Data : " + user);
   return (
     <section>
       <div className="section-constainer">
@@ -10,7 +14,8 @@ const Home = () => {
           </h1>
           <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">
             Here, an user can authenticate using google or create an account
-            using email password. Powered by Firebase.!
+            using email password and <br /> Google, Github, Facebook, Microsoft.
+            Powered by Firebase!
           </p>
           <div className="flex flex-wrap justify-center">
             <button

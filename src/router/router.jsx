@@ -6,6 +6,7 @@ import Wallet from "../components/Wallet";
 import Register from "../components/Register";
 import Login from "../components/Login";
 import ErrorPage from "../components/ErrorPage";
+import ForgotPass from "../components/ForgotPass";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/password_reset",
+        element: <ForgotPass />,
       },
     ],
   },

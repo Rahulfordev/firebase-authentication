@@ -5,6 +5,7 @@ import { auth } from "../firebase/firebase.config";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
+  OAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -16,6 +17,7 @@ export const AuthContext = createContext(null);
 // const auth = getAuth(app);
 const gitProvider = new GithubAuthProvider();
 const googleProvider = new GoogleAuthProvider();
+const microsoftProvider = new OAuthProvider("microsoft.com");
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
@@ -35,10 +37,19 @@ const AuthProvider = ({ children }) => {
   const gitHubLogin = () => {
     return signInWithPopup(auth, gitProvider);
   };
+  // =========  create microsoft user ============
+  const getMicrosoftLogin = () => {
+    return signInWithPopup(auth, microsoftProvider);
+  };
   // =========  Log out ============
   const logOut = () => {
     return signOut(auth);
   };
+
+  // =========  Log out ============
+  // const getResetPassword = () => {
+  //   return sendPasswordResetEmail(auth);
+  // };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -54,6 +65,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     gitHubLogin,
     getGoogleLogin,
+    getMicrosoftLogin,
   };
 
   return (
