@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.logo {
+  width: 50px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding: 10px 0;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.access-panel__social-button-facebook svg {
+  fill: #4267b2;
+}
+
+.login-btn {
+  background: none;
+  height: 72px;
+  margin: 16px;
+  padding: 23px;
+  width: 72px;
+  border-radius: 4px;
+  border: 1px solid #e7e7e7;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  &:hover {
+    border-color: #003b95;
+  }
+}
+
+.section-constainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.user-email {
+  padding-right: 5px;
+}
+
+.verified {
+  background-color: green;
+  color: #fff;
+  padding: 4px;
+  font-size: 12px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+
+.unverified {
+  background-color: red;
+  color: #fff;
+  padding: 4px;
+  font-size: 12px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  gap: 8.7rem;
+}
+
+/*  */
+
+header {
+  background-color: #006ce4;
+}
+
+.nav-users {
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+  margin-inline: auto;
+  gap: 5px;
+  /* padding: 2; */
+  padding-left: 8px;
+  border-radius: 5px;
+  height: 50px;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: #245bae;
+  }
+}
+
+.nav-user__photo img {
+  width: 35px;
+  border-radius: 50%;
+  border: 2px solid salmon;
+}
+
+.user__name {
+  color: #fff;
+}
