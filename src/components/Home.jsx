@@ -1,7 +1,5 @@
 import { auth } from "../firebase/firebase.config";
-import { AuthContext } from "../context/AuthProvider";
-import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
@@ -24,13 +22,19 @@ const Home = () => {
           <div className="flex flex-wrap justify-center">
             <Stack spacing={2} direction="row">
               <Button variant="contained">
-                <NavLink to="/profile">Visit Profile</NavLink>
+                <NavLink style={{ color: "white" }} to="/profile">
+                  Visit Profile
+                </NavLink>
               </Button>
               <Button variant="contained">
-                <NavLink to="/login">Login</NavLink>
+                <NavLink style={{ color: "white" }} to="/login">
+                  Login
+                </NavLink>
               </Button>
-              <Button color="bColor" variant="contained">
-                <NavLink to="/register">Register</NavLink>
+              <Button variant="contained">
+                <NavLink style={{ color: "white" }} to="/register">
+                  Register
+                </NavLink>
               </Button>
             </Stack>
           </div>

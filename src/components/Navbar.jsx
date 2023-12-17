@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { auth } from "../firebase/firebase.config";
 import { AuthContext } from "../context/AuthProvider";
+import staticphoto from "../../src/assets/user-photo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,11 @@ const Navbar = () => {
             <div>
               <div className="nav-users" onClick={() => setIsOpen(!isOpen)}>
                 <div className="nav-user__photo">
-                  <img className="user__photo" src={userPhoto} alt="" />
+                  <img
+                    className="user__photo"
+                    src={userPhoto ? userPhoto : staticphoto}
+                    alt=""
+                  />
                 </div>
                 <div className="nav-user__name">
                   <h4 className="user__name">{userName}</h4>
