@@ -66,9 +66,9 @@ export default function SignIn() {
     getGoogleLogin()
       .then((result) => {
         // console.log(result.user);
+        toast("login Successfull");
         const userInfo = result.user;
         setUser(userInfo);
-        toast("login Successfull");
         navigate("/");
       })
       .catch((error) => {
