@@ -6,8 +6,10 @@ import { AuthContext } from "../context/AuthProvider";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+
   let userName = auth?.currentUser?.displayName;
   let userPhoto = auth?.currentUser?.photoURL;
+
   return (
     <header>
       <div className="header__container">

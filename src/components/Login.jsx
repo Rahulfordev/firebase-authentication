@@ -104,18 +104,12 @@ const Login = () => {
                 name="password"
                 id="password"
                 placeholder="*******"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900"
               />
             </div>
           </div>
 
           <div>
-            <button
-              type="submit"
-              className="w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100"
-            >
-              Sign in
-            </button>
+            <button type="submit">Sign in</button>
           </div>
         </form>
         <div className="space-y-1">
@@ -123,18 +117,16 @@ const Login = () => {
             <NavLink to="/password_reset">Forgot password?</NavLink>
           </button>
         </div>
-        <div className="flex items-center pt-4 space-x-1">
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-          <p className="px-3 text-sm dark:text-gray-400">
-            or use one of these options
-          </p>
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+        <div>
+          <div></div>
+          <p>or use one of these options</p>
+          <div></div>
         </div>
-        <div className="flex justify-center space-x-4">
+        <div>
           <button
-            className="login-btn"
             onClick={handleGoogleLogin}
             aria-label="Log in with Google"
+            className="login-btn"
           >
             <svg
               viewBox="0 0 262 262"
