@@ -1,7 +1,10 @@
 import { auth } from "../firebase/firebase.config";
+import { AuthContext } from "../context/AuthProvider";
+import { useContext } from "react";
+import staticphoto from "../../src/assets/user-photo.png";
 
 const Profile = () => {
-  const user = {};
+  const { user } = useContext(AuthContext);
   let userName = auth?.currentUser?.displayName;
   let userPhoto = auth?.currentUser?.photoURL;
   let userEmail = auth?.currentUser?.email;
@@ -15,7 +18,7 @@ const Profile = () => {
               <div className="">
                 <span className=""></span>
                 <img
-                  src={userPhoto}
+                  src={userPhoto ? userPhoto : staticphoto}
                   referrerPolicy="no-referrer"
                   alt="Not show photo"
                 />

@@ -4,9 +4,10 @@ import MainLayout from "../MainLayout/MainLayout";
 import Profile from "../components/Profile";
 import Wallet from "../components/Wallet";
 import Register from "../components/Register";
-import Login from "../components/Login";
 import ErrorPage from "../components/ErrorPage";
 import ForgotPass from "../components/ForgotPass";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/NewPageOne";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <Profile />,
       },
+
       {
         path: "/wallet",
         element: <Wallet />,
@@ -31,8 +33,12 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
+        path: "/newpage",
+        element: <SignUp />,
+      },
+      {
         path: "/login",
-        element: <Login />,
+        element: <SignIn />,
       },
       {
         path: "/password_reset",

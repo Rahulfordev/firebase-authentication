@@ -23,8 +23,9 @@ const Navbar = () => {
         <nav className="nav__links">
           <NavLink to="/">Home</NavLink>
 
-          <NavLink to="./profile">Profile</NavLink>
-          <NavLink to="./wallet">Wallet</NavLink>
+          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/wallet">Wallet</NavLink>
+          <NavLink to="/newpage">New</NavLink>
 
           {user?.email ? (
             <div>
