@@ -1,10 +1,14 @@
 import { auth } from "../firebase/firebase.config";
 import { AuthContext } from "../context/AuthProvider";
 import { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+
 const Home = () => {
   let userName = auth?.currentUser?.displayName;
-  const { user } = useContext(AuthContext);
-  console.log("user All Data : " + user);
+  const bColor = "#fff";
+  // const { user } = useContext(AuthContext);
   return (
     <section>
       <div className="section-constainer">
@@ -18,26 +22,17 @@ const Home = () => {
             Powered by Firebase!
           </p>
           <div className="flex flex-wrap justify-center">
-            <button
-              type="button"
-              className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 hover:bg-gray-700 text-gray-50"
-            >
-              Visit Profile
-            </button>
-
-            <button
-              type="button"
-              className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 hover:bg-gray-700 text-gray-50"
-            >
-              Login
-            </button>
-
-            <button
-              type="button"
-              className="px-8 py-3 m-2 text-lg border rounded border-gray-700 text-gray-900"
-            >
-              Register
-            </button>
+            <Stack spacing={2} direction="row">
+              <Button variant="contained">
+                <NavLink to="/profile">Visit Profile</NavLink>
+              </Button>
+              <Button variant="contained">
+                <NavLink to="/login">Login</NavLink>
+              </Button>
+              <Button color="bColor" variant="contained">
+                <NavLink to="/register">Register</NavLink>
+              </Button>
+            </Stack>
           </div>
         </div>
       </div>

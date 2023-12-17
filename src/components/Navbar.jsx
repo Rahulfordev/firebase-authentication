@@ -25,7 +25,7 @@ const Navbar = () => {
 
           <NavLink to="/profile">Profile</NavLink>
           <NavLink to="/wallet">Wallet</NavLink>
-          <NavLink to="/newpage">New</NavLink>
+          <NavLink to="/register">Sign up</NavLink>
 
           {user?.email ? (
             <div>
@@ -63,7 +63,7 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <NavLink to="./login">Login</NavLink>
+            <NavLink to="./login">Log in</NavLink>
           )}
         </nav>
       </div>
