@@ -15,7 +15,7 @@ import MicrosoftIcon from "@mui/icons-material/Microsoft";
 
 // custom import //
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import { toast } from "react-toastify";
@@ -43,6 +43,8 @@ const defaultTheme = createTheme();
 export default function SignIn() {
   const { singIn, gitHubLogin, getGoogleLogin, getMicrosoftLogin, setUser } =
     useContext(AuthContext);
+  const [error, setError] = useState(null);
+  console.log(error);
   const navigate = useNavigate();
 
   // Emil & Password
@@ -58,7 +60,10 @@ export default function SignIn() {
         toast.success("login successfull");
         navigate("/");
       })
-      .catch((error) => toast.error(error.message));
+      .catch((error) => {
+        setError(error.message);
+        toast.error(error.message);
+      });
   };
 
   // Google
@@ -170,6 +175,7 @@ export default function SignIn() {
                 </NavLink>
               </Grid>
             </Grid>
+            <p className="signIn-error">{error}</p>
             <Grid marginLeft={4} container>
               <Grid sx={{ pr: 2 }}>
                 <Button
@@ -215,6 +221,7 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
+
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>

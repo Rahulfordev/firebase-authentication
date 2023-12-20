@@ -16,10 +16,12 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import MicrosoftIcon from "@mui/icons-material/Microsoft";
 //
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase/firebase.config";
 
 function Copyright(props) {
   return (
@@ -46,6 +48,7 @@ const defaultTheme = createTheme();
 export default function SignUp() {
   const { createUser, gitHubLogin, getGoogleLogin, getMicrosoftLogin } =
     useContext(AuthContext);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   // Sign Up
@@ -65,6 +68,7 @@ export default function SignUp() {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError(error.message);
         toast(error.message);
         console.log(errorCode, errorMessage);
       });
@@ -192,6 +196,7 @@ export default function SignUp() {
                 </NavLink>
               </Grid>
             </Grid>
+            <p className="signIn-error">{error}</p>
             <Grid marginLeft={4} container>
               <Grid sx={{ pr: 2 }}>
                 <Button

@@ -191,6 +191,10 @@ header {
   display: none;
 }
 
+.signIn-error {
+  color: red;
+}
+
 @media screen and (max-width: 600px) {
   .desktop {
     display: none;
