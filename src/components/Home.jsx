@@ -2,10 +2,13 @@ import { auth } from "../firebase/firebase.config";
 import { NavLink } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const Home = () => {
+  const { user, logOut } = useContext(AuthContext);
   let userName = auth?.currentUser?.displayName;
-  const bColor = "#fff";
+
   // const { user } = useContext(AuthContext);
   return (
     <section>
@@ -26,11 +29,22 @@ const Home = () => {
                   Visit Profile
                 </NavLink>
               </Button>
-              <Button variant="contained">
-                <NavLink style={{ color: "white" }} to="/login">
-                  Login
-                </NavLink>
-              </Button>
+              {user?.email ? (
+                <Button
+                  onClick={logOut}
+                  variant="contained"
+                  style={{ color: "white" }}
+                >
+                  Log out
+                </Button>
+              ) : (
+                <Button variant="contained">
+                  <NavLink style={{ color: "white" }} to="/login">
+                    Login
+                  </NavLink>
+                </Button>
+              )}
+
               <Button variant="contained">
                 <NavLink style={{ color: "white" }} to="/register">
                   Register
